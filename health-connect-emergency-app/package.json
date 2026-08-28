@@ -1,0 +1,19 @@
+{
+  "name": "healthcare-emergency-connect",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hackathon-ready ambulance request, driver dispatch, live tracking, and hospital availability prototype.",
+  "scripts": {
+    "dev": "concurrently \"npm.cmd --prefix server run dev\" \"npm.cmd --prefix client run dev\"",
+    "dev:unix": "concurrently \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "client": "npm.cmd --prefix client run dev",
+    "server": "npm.cmd --prefix server run dev",
+    "stop:ports": "powershell -ExecutionPolicy Bypass -File scripts/stop-ports.ps1",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server start",
+    "install:all": "npm.cmd install && npm.cmd --prefix client install && npm.cmd --prefix server install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
