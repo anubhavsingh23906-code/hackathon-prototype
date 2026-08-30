@@ -11,8 +11,10 @@ app = FastAPI(
 )
 
 # Load trained model
-model = joblib.load("model/hospital_model.pkl")
+from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parent
+model = joblib.load(BASE_DIR / "model" / "hospital_model.pkl")
 
 class Hospital(BaseModel):
     name: str
